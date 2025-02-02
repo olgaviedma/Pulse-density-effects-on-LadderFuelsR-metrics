@@ -6,50 +6,38 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 # Getting Started
 
-#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES #1.THINNING LIDARPOD FILES (CAUTION THE THINNED DATA CAN BE CHANGE IF YOU USE LIDR OR LASTOOLS AND IF USE -HIGHEST or -LOWEST parameter in LasTools)
-
+#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES 
+#1.THINNING LIDARPOD FILES
 ```{r pressure, echo=FALSE}
-
-############################
-### USING LASTOOLS (in a loop for checking thinning process consistency)
-############################
-
 ```
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
-
-#1. CHM FOR LAS FILES
-
+#2. CHM FOR LAS FILES
 ```{r pressure, echo=FALSE}
-
 ```
+![CHM (Full resolution vs 1 pulse/m²)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/2_CHMs.png)
 
-#2-3. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
-
+#3-4. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
 ```{r pressure, echo=FALSE}
-
 ```
+![Crowns polygons at full resolution (watershed)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/3_CROWN_POLYGONS.png)
 
-#4. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
-
+#5. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
 ```{r pressure, echo=FALSE}
-
 ```
+![Cropping all thinned LiDAR files with full-resoultion crowns polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/4_CROPPING_LAS.png)
 
-#5. LAI-LAD METRICS BY TREE and point density statistics. 6. DEPURATING TREE LAD PROFILES (\>= 5 HEIGHT VALUES)
-
+#6. LAI-LAD METRICS BY TREE
 ```{r pressure, echo=FALSE}
-
 ```
+![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
 #SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 6-17)
-
 #18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
-
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
-
-
 ```
+![LadderFuelsR metrics associated to crown polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/18_ladderfuelsR_metrics_polygons.png)
+
 
 #19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST)
 
