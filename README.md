@@ -6,7 +6,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 # Getting Started
 
-#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES 
+#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
 #1.THINNING LIDARPOD FILES
 ```{r pressure, echo=FALSE}
 ```
@@ -32,7 +32,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 ```
 ![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
-#SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 6-17)
+#SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-17)<br/>
 #18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 ```
