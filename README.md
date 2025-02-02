@@ -1,5 +1,3 @@
-
-
 **Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR**
 
 Authors: Olga Viedma and JM Moreno
@@ -8,55 +6,60 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 # Getting Started
 
+#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES #1.THINNING LIDARPOD FILES (CAUTION THE THINNED DATA CAN BE CHANGE IF YOU USE LIDR OR LASTOOLS AND IF USE -HIGHEST or -LOWEST parameter in LasTools)
 
-#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES
-#1.THINNING LIDARPOD FILES (CAUTION THE THINNED DATA CAN BE CHANGE IF YOU USE LIDR OR LASTOOLS AND IF USE -HIGHEST or -LOWEST parameter in LasTools)
 ```{r pressure, echo=FALSE}
 
 ############################
 ### USING LASTOOLS (in a loop for checking thinning process consistency)
 ############################
 
-![] ("https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png")
+![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
 ```
 
 #1. CHM FOR LAS FILES
+
 ```{r pressure, echo=FALSE}
 
 ```
+
 #2-3. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
+
 ```{r pressure, echo=FALSE}
 
 ```
+
 #4. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
+
 ```{r pressure, echo=FALSE}
 
 ```
 
 #5. LAI-LAD METRICS BY TREE and point density statistics. 6. DEPURATING TREE LAD PROFILES (\>= 5 HEIGHT VALUES)
+
 ```{r pressure, echo=FALSE}
 
 ```
 
-
-
 #SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 6-17)
 
 #18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
+
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 
 
 ```
 
-#19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST) 
+#19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST)
+
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 
 ## Internal tables for further processing
 ```
 
-#SECTION 3. CLUSTER OF ALL TREES (across thinning levels) 
-#20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
+#SECTION 3. CLUSTER OF ALL TREES (across thinning levels) #20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
+
 ```{r pressure, echo=FALSE}
 
 ###############################
@@ -86,7 +89,9 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 
 ```
+
 #21. STATISTICAL ANALYSIS "PCA CLUSTER": kruskal-wallis (TABLE S3 & FIG. S2)
+
 ```{r pressure, echo=FALSE}
 
 ##############################################
@@ -98,7 +103,9 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 ########################################
  
 ```
+
 #22. JOINING PCA CLUSTERS AND FITTED MODELS TO CROWN POLYGONS (inputs for FIG. S4)
+
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 
 ######################################
@@ -107,8 +114,8 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```
 
-
 #SECTION 4.CALCULATE MEDIAN VALUES
+
 ```{r pressure, echo=FALSE}
 
 #23.CALCULATE MEDIAN I VALUES OF EACH VARIABLE BY TREES
@@ -118,8 +125,8 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```
 
-
 #SECTION 5. REGRESSION MODELS USING MEDIAN VALUES DIRECTLY: RATES OF CHANGE (TABLE S4 & FIG. 7)
+
 ```{r pressure, echo=FALSE}
 
 ########################################
@@ -132,9 +139,8 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```
 
-
-
 #SECTION 6. REGRESSION MODELS USING INDIVIDUAL TREES: RATES OF CHANGE RATES FOR EACH TREE (median) (TABLE_S5 & FIG S6)
+
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 
 
@@ -150,9 +156,8 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```
 
+#SECTION 7. RATES OF CHANGE BY CLUSTERS: TAKING THE "NO_THINNED" LEVEL CLASSIFICATION AS BENCHMARK
 
-
-#SECTION 7. RATES OF CHANGE BY CLUSTERS: TAKING THE "NO_THINNED" LEVEL CLASSIFICATION AS BENCHMARK 
 ```{r pressure, echo=FALSE}
 
 #####################################
@@ -161,13 +166,15 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```
 
-#32. MEDIAN VALUES CLUSTERS (CLUST_NT)  
+#32. MEDIAN VALUES CLUSTERS (CLUST_NT)
+
 ```{r pressure, echo=FALSE}
 
 
 ```
 
 #33.RATES OF CHANGE BY CLUSTERS (USING THE BENCHMARK: CLUST_NT) (TABLE_S6 & FIGS. S8-S12)
+
 ```{r pressure, echo=FALSE}
 
 
@@ -183,6 +190,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 ```
 
 #33.COMPARISON RATES OF CHANGE OF INDIVIDUAL TREES vs. MEDIAN VALUES (CLUST_NT) (TABLE S7 & FIG. S7)
+
 ```{r pressure, echo=FALSE}
 
 
@@ -198,7 +206,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 ```
 
 #00. PLOTS EFFECTIVE METRICS (LadderFuelsR) by CLUSTERS (inputs for FIG. 6)
+
 ```{r Plots of fuel layers with LAD percentage greater than 25 and the canopy base height (CBH) based on the maximum LAD percentage, echo=TRUE, message=FALSE, warning=FALSE}
 
 ```
-
