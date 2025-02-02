@@ -27,56 +27,44 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 ```
 ![Cropping all thinned LiDAR files with full-resoultion crowns polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/4_CROPPING_LAS.png)
 
-#6. LAI-LAD METRICS BY TREE
+#6_7. LAI-LAD METRICS BY TREE
 ```{r pressure, echo=FALSE}
 ```
 ![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
-#SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-17)<br/>
+#SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-19)<br/>
 #18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 ```
 ![LadderFuelsR metrics associated to crown polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/18_ladderfuelsR_metrics_polygons.png)
 
-
 #19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST)
-
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
-
 ## Internal tables for further processing
 ```
 
-#SECTION 3. CLUSTER OF ALL TREES (across thinning levels) #20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
+#SECTION 3. CLUSTER OF ALL TREES (across thinning levels)<br/>
+#20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
 
 ```{r pressure, echo=FALSE}
 
 ###############################
 ## INPUT FOR TABLE S2: V.TEST (VARIABLES IMPORTANCE) AND CLUSTERS PERFORMANCE
 ###################################
-
-
 ################################################
 # FIG.2: PLOT CLUSTERS IN PCA AXES 
 ################################################
-
-
 #######################################################
 ## FIG.4: PLOT OF CLUSTERS DISTRIBUTION (ALL SITES TOGETHER)  
 #######################################################
-
-
 #######################################################
 ## FIG. S3: PLOT OF CLUSTERS DISTRIBUTION FACET BY SITES 
 #######################################################
 
-
-#######################################################
-##  OTHER RESULTS DERIVED FROM CLUSTER PCA  
-#######################################################
-# CORRELATION OF VARIABLES WITH THE PCA DIMENSIONS
-
-
 ```
+![Table S2. Clusters performance](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S2_CLUSTERS_PERFORMANCE.png)<br/>
+![Figure 2. Clusters on PCA axes](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG2_plot_clusters_PCA_AXES.png)
+
 
 #21. STATISTICAL ANALYSIS "PCA CLUSTER": kruskal-wallis (TABLE S3 & FIG. S2)
 
