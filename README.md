@@ -10,21 +10,25 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 #1.THINNING LIDARPOD FILES
 ```{r pressure, echo=FALSE}
 ```
+#Full resolution vs 1 pulse/m²
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
 #2. CHM FOR LAS FILES
 ```{r pressure, echo=FALSE}
 ```
+# CHM (Full resolution vs 1 pulse/m²
 ![CHM (Full resolution vs 1 pulse/m²)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/2_CHMs.png)
 
 #3-4. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
 ```{r pressure, echo=FALSE}
 ```
+# [Crowns polygons at full resolution (watershed)
 ![Crowns polygons at full resolution (watershed)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/3_CROWN_POLYGONS.png)
 
 #5. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
 ```{r pressure, echo=FALSE}
 ```
+# Cropping all thinned LiDAR files with full-resoultion crowns polygons
 ![Cropping all thinned LiDAR files with full-resoultion crowns polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/4_CROPPING_LAS.png)
 
 #6_7. LAI-LAD METRICS BY TREE
@@ -36,6 +40,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 #18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
 ```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
 ```
+# LadderFuelsR metrics associated to crown polygons
 ![LadderFuelsR metrics associated to crown polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/18_ladderfuelsR_metrics_polygons.png)
 
 #19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST)
@@ -48,8 +53,11 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 ```{r pressure, echo=FALSE}
 ```
+# Table S2. Clusters Performance
 ![Table S2. Clusters performance](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S2_CLUSTERS_PERFORMANCE.PNG)
+# Figure 2. Clusters on PCA axes
 ![Figure 2. Clusters on PCA axes](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG2_plot_clusters_PCA_AXES.png)
+# Figure S3. Clusters distribution by sites
 ![Figure S3. Clusters distribution by sites](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S3_plot_distribution_cluster_by_CLUST_NT_by_thin_levels.png)
 
 
