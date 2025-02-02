@@ -19,7 +19,7 @@ This study evaluates the impact of LiDAR pulse density thinning on forest struct
 
 <p align="center" style="margin: 0;">
 
-<img src="https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/branch/FIGURES_TABLES/1_THINNING_LIDARPOD.png" alt="Full resolution vs 1 pulse/m2" style="margin: 0;"/>
+<img src="https://github.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/blob/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png" alt="Full resolution vs 1 pulse/m2" style="margin: 0;"/>
 
 </p>
 
