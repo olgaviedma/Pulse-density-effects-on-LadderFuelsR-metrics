@@ -7,11 +7,11 @@ Key forest metrics, including leaf area density (LAD), leaf area index (LAI), ca
 
 # Getting Started
 
-#SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+# SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+
+## download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
+
 ```{r pressure, echo=FALSE}
-
-##download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
-
 # Load necessary library
 library(httr)
 
@@ -71,16 +71,16 @@ print(head(extracted_files))
 
 ```
 
-# THINNING LIDARPOD FILES
+# 1.THINNING LIDARPOD FILES
 
-# The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools (REF). We used the “random” option selecting the lowest (default) points.
+## The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools (REF). We used the “random” option selecting the lowest (default) points.
 
 # Full resolution vs 1 pulse/m²
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
-#2. CHM FOR LAS FILES
-```{r pressure, echo=FALSE}
-```
+# 2. CHM FOR LAS FILES
+
+## The Canopy Height Model (CHM) was calculated using the pitfree method, scanning the canopy at different height intervals (0 to 30 meters) and using variable-sized windows at 0.5 m resolution 
 # CHM (Full resolution vs 1 pulse/m²
 ![CHM (Full resolution vs 1 pulse/m²)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/2_CHMs.png)
 
