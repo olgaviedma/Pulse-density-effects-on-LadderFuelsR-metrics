@@ -8,6 +8,7 @@ Key forest metrics, including leaf area density (LAD), leaf area index (LAI), ca
 # Getting Started
 
 #SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+```{r pressure, echo=FALSE}
 
 ##download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
 
@@ -68,11 +69,14 @@ if (length(extracted_files) == 0) {
 message("First few extracted files:")
 print(head(extracted_files))
 
-#1.THINNING LIDARPOD FILES
-```{r pressure, echo=FALSE}
 ```
+
+#1.THINNING LIDARPOD FILES
+
+```{r pressure, echo=FALSE}
 #The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools (REF). We used the “random” option selecting the lowest (default) points.
 #Full resolution vs 1 pulse/m²
+```
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
 #2. CHM FOR LAS FILES
