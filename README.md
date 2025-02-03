@@ -2,14 +2,76 @@
 
 Authors: Olga Viedma and JM Moreno
 
-This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR framework. High-resolution LiDAR data were collected from Mediterranean forest sites with diverse structures and fire histories and systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
+This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics.High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. 
+Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
 
 # Getting Started
 
 #SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+
+##download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
+
+# Load necessary library
+library(httr)
+
+# Step 1: Define URLs and Local Paths to download ZENODO database
+zenodo_url <- "https://zenodo.org/record/14786024/files/DATA.zip?download=1"  # Zenodo download link
+zip_file <- "DATA.zip"       # Name of the downloaded ZIP file
+output_dir <- "DATA"         # Final directory for extracted files
+temp_dir <- "temp_extracted" # Temporary folder for intermediate extraction
+
+# Step 2: Download the ZIP File (if not already downloaded)
+if (!file.exists(zip_file)) {
+  message("Downloading DATA.zip from Zenodo...")
+  GET(zenodo_url, write_disk(zip_file, overwrite = TRUE))
+} else {
+  message("ℹ️  DATA.zip already exists. Skipping download.")
+}
+
+# Step 3: Validate the Downloaded ZIP File
+file_size <- file.info(zip_file)$size
+if (is.na(file_size) || file_size < 1e6) {  # Ensure the file is >1 MB
+  stop("Download failed: ZIP file is too small or empty!")
+} else {
+  message(paste("ZIP file size:", round(file_size / (1024 * 1024), 2), "MB"))
+}
+
+# Step 4: Extract the ZIP File to a Temporary Folder
+message("Extracting the ZIP file to a temporary folder...")
+unzip(zip_file, exdir = temp_dir, overwrite = TRUE)
+
+# Step 5: Move Contents to Final Output Directory
+if (file.exists(file.path(temp_dir, "DATA"))) {
+  # If ZIP contains an extra "DATA" folder, move its contents
+  message("Moving extracted contents to the DATA directory...")
+  file.rename(from = file.path(temp_dir, "DATA"), to = output_dir)
+} else {
+  # Otherwise, directly move the extracted files
+  message("Moving extracted files to the DATA directory...")
+  file.rename(from = temp_dir, to = output_dir)
+}
+
+# Step 6: Clean Up Temporary Files
+unlink(temp_dir, recursive = TRUE)  # Delete the temporary folder
+
+# Step 7: Verify the Final Extracted Files
+message("Veifying the final structure of extracted files...")
+extracted_files <- list.files(output_dir, recursive = TRUE)
+if (length(extracted_files) == 0) {
+  stop("Unzipping failed: No files were extracted.")
+} else {
+  message("Extraction successful! Files extracted:")
+  print(extracted_files)
+}
+
+# Step 8 (Optional): Print a Preview of Extracted Files
+message("First few extracted files:")
+print(head(extracted_files))
+
 #1.THINNING LIDARPOD FILES
 ```{r pressure, echo=FALSE}
 ```
+#The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools (REF). We used the “random” option selecting the lowest (default) points.
 #Full resolution vs 1 pulse/m²
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 
