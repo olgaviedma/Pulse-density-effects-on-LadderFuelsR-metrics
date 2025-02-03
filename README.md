@@ -1,13 +1,12 @@
-**Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR**
+# Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR**
 
-Authors: Olga Viedma and JM Moreno
+## Authors: Olga Viedma and JM Moreno
 
-This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics.High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. 
-Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
+### This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics.High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
 
-# Getting Started
+## Getting Started
 
-## SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+# SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
 
 ### Download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
 ```{r pressure, echo=FALSE}
@@ -98,39 +97,35 @@ print(head(extracted_files))
 ## Cropping all thinned LiDAR files with full-resoultion crowns polygons
 ![Cropping all thinned LiDAR files with full-resoultion crowns polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/4_CROPPING_LAS.png)
 
-#6_7. LAI-LAD METRICS BY TREE
+## 6_7. LAI-LAD METRICS BY TREE
 ### The Leaf Area Density (LAD) profiles at 1-meter intervals (height bins) were calculated for each tree
 ## LAD profiles and LAI metrics
 ![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
-#SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-19)<br/>
-#18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
-```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
-```
-# LadderFuelsR metrics associated to crown polygons
+# SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-19)<br/>
+## 18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
+### We applied the methodology developed in LadderFuelsR to obtain several relevant variables of the vertical structure of the trees (Viedma et al. 2024), following a sequential workflow (https://github.com/olgaviedma/LadderFuelsR) (accessed on 11th November 2024). 
+## LadderFuelsR metrics associated to crown polygons
 ![LadderFuelsR metrics associated to crown polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/18_ladderfuelsR_metrics_polygons.png)
 
-#19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST)
-```{r Joining crown polygons and ladder fuels metrics, echo=TRUE, message=FALSE, warning=FALSE}
-## Internal tables for further processing
-```
+## 19.ALL METRICS and DIFFERENCES II: (NO THINNED - REST OF THINNED LEVELS)
+### Internal tables for further processing
 
-#SECTION 3. CLUSTER OF ALL TREES (across thinning levels)<br/>
-#20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
-
-```{r pressure, echo=FALSE}
-```
-# Table S2. Clusters Performance
-![Table S2. Clusters performance](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S2_CLUSTERS_PERFORMANCE.PNG)
-# Figure 2. Clusters on PCA axes
+# SECTION 3. CLUSTER OF ALL TREES (across thinning levels)<br/>
+## 20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and FIG.S3)
+### The fuel properties of each tree at each thinned level (n=10) were classified using the Hierarchical Clustering on Principal Components (HCPC) from the FactoMineR package. The performance of different numbers of clusters was tested using: the silhouette scores and two global performance indices: the Calinski-Harabas and the Davies-Bouldin. To assess the susceptibility of the forest structures to change to other ones over thinned levels, we calculated the occupancy percentage of each cluster at each thinning level.
+## Figure 2. Clusters on PCA axes
 ![Figure 2. Clusters on PCA axes](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG2_plot_clusters_PCA_AXES.png)
-# Figure S3. Clusters distribution by sites
+## Table S2. Clusters Performance
+![Table S2. Clusters performance](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S2_CLUSTERS_PERFORMANCE.PNG)
+## Figure S3. Clusters distribution by sites
 ![Figure S3. Clusters distribution by sites](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S3_plot_distribution_cluster_by_CLUST_NT_by_thin_levels.png)
-
-
 #21. STATISTICAL ANALYSIS "PCA CLUSTER": kruskal-wallis (TABLE S3 & FIG. S2)
-
-```{r pressure, echo=FALSE}
+### The clusters statistical separability was checked using the non-parametric post hoc ANOVA test Kruskal–Wallis. 
+## Figure S2. Statistical differences among clusters (Kruskal-Wallis test)
+![Figure S2. Statistical differences among clusters (Kruskal-Wallis test)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S2_plot_CLUSTER_estadisticos_kruskal.png)
+## Table S3. Statistics of main fuel properties by cluster
+![Table S3. Statistics of main fuel properties by cluster](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S3_CLUSTERS_STATISTICS.PNG)
 
 ##############################################
 # TABLE S3 .DOCX STATISTICS CLUSTER: KRUSKAL-WALLIS 
