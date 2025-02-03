@@ -1,8 +1,8 @@
-# Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR**
+# Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR
 
 ## Authors: Olga Viedma and JM Moreno
 
-### This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics.High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
+### This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics. High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
 
 ## Getting Started
 
@@ -76,15 +76,15 @@ print(head(extracted_files))
 
 ```
 ## 1.THINNING LIDARPOD FILES
-### The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools (REF). We used the “random” option selecting the lowest (default) points.
+### The LiDAR point clouds were thinned from the original density (median 648 pulses/m2 ± 376.4) to only 1 pulses/m2 by using these thinned levels (pulse/m2): 100, 50, 25, 10, 5, 4, 3, 2 and 1 in LasTools. We used the “random” option selecting the lowest (default) points.
 ## Full resolution vs 1 pulse/m²
 ![Full resolution vs 1 pulse/m²](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/1_THINNING_LIDARPOD.png)
 ## 2. CHM FOR LAS FILES
-### The Canopy Height Model (CHM) was calculated using the pitfree method, scanning the canopy at different height intervals (0 to 30 meters) and using variable-sized windows at 0.5 m resolution 
+### The Canopy Height Model (CHM) was calculated using the pitfree method, scanning the canopy at different height intervals (0 to 40 meters) and using variable-sized windows at 0.5 m resolution 
 ## CHM (Full resolution vs 1 pulse/m²
 ![CHM (Full resolution vs 1 pulse/m²)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/2_CHMs.png)
-## 3-4. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
-### Individual tree crowns was derived using the watershed algorithm implemented in LidR package. The minimum height was set at 4 meters. The tolerance parameter was set at 0.25 and the parameter “ext” at 1.
+## 3-4. CROWNS DELIMITATION AND METRICS FOR UNTHINNED LAS FILES
+### Individual tree crowns were derived using the watershed algorithm implemented in LidR package. The "minimum height"" was set at 4 meters. The "tolerance"" parameter was set at 0.25 and the parameter “ext” at 1.
 ## Crowns polygons at full resolution (watershed)
 ![Crowns polygons at full resolution (watershed)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/3_CROWN_POLYGONS.png)
 ## 5. CROP ALL THINNED .LAS FILES WITH TREE POLYGONS DERIVED FROM BENCHMARK .LAS FILE (UNTHINNED)
@@ -96,8 +96,8 @@ print(head(extracted_files))
 ## LAD profiles and LAI metrics
 ![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
-# SECTION 2.LadderFuelsR AND LAI metrics (STEPS 8-19)<br/>
-## 18. JOINING LADDER FUEL PROPERTIES WITH CROWN POLYGONS
+# SECTION 2.LadderFuelsR and LAI metrics (STEPS 8-19)<br/>
+## 18. JOINING LADDER FUEL PROPERTIES TO CROWN POLYGONS
 ### We applied the methodology developed in LadderFuelsR to obtain several relevant variables of the vertical structure of the trees (Viedma et al. 2024), following a sequential workflow (https://github.com/olgaviedma/LadderFuelsR) (accessed on 11th November 2024). 
 ## LadderFuelsR metrics associated to crown polygons
 ![LadderFuelsR metrics associated to crown polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/18_ladderfuelsR_metrics_polygons.png)
@@ -133,12 +133,12 @@ print(head(extracted_files))
 ## Figure 7. Rates of Change (RCH) of main fuel properties using median values directly
 ![Figure 7. Rates of Change (RCH) of main fuel properties using median values directly](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG7_PLOT_RATES_CHANGE_MEDIAN_VAR_p2575.png)
 
-# SECTION 6. REGRESSION MODELS USING INDIVIDUAL TREES: RATES OF CHANGE RATES FOR EACH TREE (median) (TABLE S5 & FIG S6)
+# SECTION 6. REGRESSION MODELS USING INDIVIDUAL TREES: RATES OF CHANGE RATES FOR EACH TREE (TABLE S5 & FIG S6)
 ### The rates of change (RCH) in fuel properties for each individual tree across the thinned levels were calculated using multiple regression models (exponential, logarithmic, and linear). The resulting regression slopes were then converted into percentage values.
-## Table S5. Rates of Change (RCH) of main fuel properties for each individual tree
-![Table S5. Rates of Change (RCH) of main fuel properties for each individual tree](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S5_RCH_by_TREES.PNG)
-## Figure S6. Comparison of Rates of Change (RCH) of main fuel properties calculated from median values and for each individual tree
-![Figure S6. Comparison of Rates of Change (RCH) of main fuel properties calculated from median values and for each individual tree](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S6_PLOT_COMPARISON_RATES_CHANGE_TREES_MEDIAN_VAR_p2575.png)
+## Table S5. Rates of Change (RCH) of main fuel properties from individual trees
+![Table S5. Rates of Change (RCH) of main fuel properties from individual trees](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S5_RCH_by_TREES.PNG)
+## Figure S6. Comparison of Rates of Change (RCH) of main fuel properties calculated from median values and from individual trees
+![Figure S6. Comparison of Rates of Change (RCH) of main fuel properties calculated from median values and from individual trees](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S6_PLOT_COMPARISON_RATES_CHANGE_TREES_MEDIAN_VAR_p2575.png)
 
 # SECTION 7. RATES OF CHANGE BY CLUSTERS: TAKING THE "NO_THINNED" LEVEL CLASSIFICATION AS BENCHMARK
 ### To assess if certain tree typologies identified at the highest resolution underwent significant changes at other thinning levels, we calculated the percentage of trees that changed their cluster assignment at full resolution across the different thinning levels.
@@ -152,7 +152,7 @@ print(head(extracted_files))
 ![Table S6. Rates of Change (RCH) of main fuel properties by Cluster using median values](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S6_RCH_by_CLUSTERS_NT_BY_MEDIANS.PNG)
 ## Figures S8-12. Rates of Change (RCH) of main fuel properties by Cluster using median value
 ![Figures S8-12. Rates of Change (RCH) of main fuel properties by Cluster using median value](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FIG_S8_plot_RCH_quantiles_2575_CLUSTER_NT_F1.png)
-# 34.COMPARISON OF THE RATES OF CHANGE FROM INDIVIDUAL TREES vs. MEDIAN VALUES BY CLUSTERS (TABLE S7 & FIG. S7)
+## 34.COMPARISON OF THE RATES OF CHANGE FROM INDIVIDUAL TREES vs. MEDIAN VALUES BY CLUSTERS (TABLE S7 & FIG. S7)
 ## Table S7. Rates of Change (RCH) of main fuel properties by Cluster using all trees
 ![Table S7. Rates of Change (RCH) of main fuel properties by Cluster using all trees](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TABLE_S7_RCH_by_CLUSTERS_NT_BY_TREES.PNG)
 ## Figures S7.Comparison of Rates of Change (RCH) "by Clusters" of main fuel properties calculated from median values and for each individual tree
