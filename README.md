@@ -2,7 +2,7 @@
 
 ## Authors: Olga Viedma and JM Moreno
 
-### This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics. High-resolution LiDAR data collected from Mediterranean forest sites was systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
+### National LiDAR surveys conducted in various countries often use low pulse densities, which can significantly impact the accuracy of derived fuel property estimates, potentially leading to underestimation or overestimation of critical metrics used for fire hazard assessments. This study evaluates the impact of LiDAR pulse density thinning on forest structure characterization using the LadderFuelsR metrics. High-resolution LiDAR data from some Mediterranean forests was systematically thinned to simulate varying pulse densities. Key forest metrics, including leaf area density (LAD), leaf area index (LAI), canopy base height, depth, height of fuel layers, and inter-layer distances, were derived to assess changes at different thinning levels.
 
 ## Getting Started
 
