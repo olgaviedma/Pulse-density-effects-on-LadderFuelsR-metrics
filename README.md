@@ -7,29 +7,31 @@ Key forest metrics, including leaf area density (LAD), leaf area index (LAI), ca
 
 # Getting Started
 
-# SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
+## SECTION 1. THINNING, CHM, SEGMENTATION, LAD PROFILES <br/>
 
-## download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
-
+### Download ZENODO database: DATA.zip. Available at: https://zenodo.org/record/14786024
 ```{r pressure, echo=FALSE}
 # Load necessary library
 library(httr)
 
 # Step 1: Define URLs and Local Paths to download ZENODO database
+
 zenodo_url <- "https://zenodo.org/record/14786024/files/DATA.zip?download=1"  # Zenodo download link
 zip_file <- "DATA.zip"       # Name of the downloaded ZIP file
 output_dir <- "DATA"         # Final directory for extracted files
 temp_dir <- "temp_extracted" # Temporary folder for intermediate extraction
 
 # Step 2: Download the ZIP File (if not already downloaded)
+
 if (!file.exists(zip_file)) {
   message("Downloading DATA.zip from Zenodo...")
   GET(zenodo_url, write_disk(zip_file, overwrite = TRUE))
 } else {
-  message("ℹ️  DATA.zip already exists. Skipping download.")
+  message("DATA.zip already exists. Skipping download.")
 }
 
 # Step 3: Validate the Downloaded ZIP File
+
 file_size <- file.info(zip_file)$size
 if (is.na(file_size) || file_size < 1e6) {  # Ensure the file is >1 MB
   stop("Download failed: ZIP file is too small or empty!")
@@ -38,10 +40,12 @@ if (is.na(file_size) || file_size < 1e6) {  # Ensure the file is >1 MB
 }
 
 # Step 4: Extract the ZIP File to a Temporary Folder
+
 message("Extracting the ZIP file to a temporary folder...")
 unzip(zip_file, exdir = temp_dir, overwrite = TRUE)
 
 # Step 5: Move Contents to Final Output Directory
+
 if (file.exists(file.path(temp_dir, "DATA"))) {
   # If ZIP contains an extra "DATA" folder, move its contents
   message("Moving extracted contents to the DATA directory...")
@@ -53,9 +57,11 @@ if (file.exists(file.path(temp_dir, "DATA"))) {
 }
 
 # Step 6: Clean Up Temporary Files
+
 unlink(temp_dir, recursive = TRUE)  # Delete the temporary folder
 
 # Step 7: Verify the Final Extracted Files
+
 message("Veifying the final structure of extracted files...")
 extracted_files <- list.files(output_dir, recursive = TRUE)
 if (length(extracted_files) == 0) {
@@ -66,6 +72,7 @@ if (length(extracted_files) == 0) {
 }
 
 # Step 8 (Optional): Print a Preview of Extracted Files
+
 message("First few extracted files:")
 print(head(extracted_files))
 
@@ -81,21 +88,19 @@ print(head(extracted_files))
 ## CHM (Full resolution vs 1 pulse/m²
 ![CHM (Full resolution vs 1 pulse/m²)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/2_CHMs.png)
 
-#3-4. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
-```{r pressure, echo=FALSE}
-```
-# [Crowns polygons at full resolution (watershed)
+## 3-4. CROWNS WATERSHED AND CROWNS METRICS FOR UNTHINNED LAS FILES
+### Individual tree crowns was derived using the watershed algorithm implemented in LidR package. The minimum height was set at 4 meters. The tolerance parameter was set at 0.25 and the parameter “ext” at 1.
+## [Crowns polygons at full resolution (watershed)
 ![Crowns polygons at full resolution (watershed)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/3_CROWN_POLYGONS.png)
 
-#5. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
-```{r pressure, echo=FALSE}
-```
-# Cropping all thinned LiDAR files with full-resoultion crowns polygons
+## 5. CROP ALL THINNED LAS FILES WITH TREE POLYGONS derived from BENCHMARK LAS FILE (UNTHINNED)
+### All returns from the normalized LiDAR heights were cropped using the crown’s polygons from the benchmark Lidar file (unthinned)
+## Cropping all thinned LiDAR files with full-resoultion crowns polygons
 ![Cropping all thinned LiDAR files with full-resoultion crowns polygons](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/4_CROPPING_LAS.png)
 
 #6_7. LAI-LAD METRICS BY TREE
-```{r pressure, echo=FALSE}
-```
+### The Leaf Area Density (LAD) profiles at 1-meter intervals (height bins) were calculated for each tree
+## LAD profiles and LAI metrics
 ![LAD profiles and LAI metrics](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/5_LAD_LAI_METRICS.png)
 
 #SECTION 2.LadderFuelsR METRICS AND LAI METRICS (STEPS 8-19)<br/>
