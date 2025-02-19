@@ -57,7 +57,7 @@ library(LadderFuelsR)
 
 
 ########################################################
-#20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.2 & 4 and TABLE S2 & INPUT FOR FIG.S4)
+#20. PCA CLUSTER AND FREQUENCY DISTRIBUTION (FIGS.3 & 5 and TABLE S2 & INPUT FOR FIG.S4)
 ########################################################
 
 library(tidyverse)
@@ -352,10 +352,10 @@ write.table(clust_PCA_statist, file.path(cluster_dir,"statistics_PCA4_all_metric
 
 
 
-# FIG.2: PLOT CLUSTERS IN PCA AXES 
+# FIG.3: PLOT CLUSTERS IN PCA AXES 
 
 
-plot_file1 <- file.path(cluster_dir,"FIG2_plot_clusters_PCA_AXES.png")
+plot_file1 <- file.path(cluster_dir,"FIG3_plot_clusters_PCA_AXES.png")
 
 cluster_colors <- c("1" = "orange", "2" = "brown","3" = "green","4" = "lightblue")  # Initialize the color vector
 
@@ -401,7 +401,7 @@ print(plot1)
 ggsave(filename = plot_file1, plot = plot1, width = 8.68, height = 7.35)
 
 
-##FIG.4 (CLUSTERS DISTRIBUTION BY THINNING LEVELS)
+##FIG.5 (CLUSTERS DISTRIBUTION BY THINNING LEVELS)
 
 library(epiDisplay)
 library(questionr)
@@ -449,7 +449,7 @@ clust_pca1 <- clust_pca1[order(clust_pca1$thin_level), ]
 ## FIG.4: PLOT OF CLUSTERS DISTRIBUTION (ALL SITES TOGETHER)  
 
 
-plot_file2 <- file.path(cluster_dir,"FIG4_CLUSTER_distribution_ALL_sITES_TOGETHER.png")
+plot_file2 <- file.path(cluster_dir,"FIG5_CLUSTER_distribution_ALL_sITES_TOGETHER.png")
 
 # Create a ggplot object using ggplot2 directly
 p1 <- ggplot(clust_pca1, aes(x = thin_level, fill = factor(cluster))) + 
