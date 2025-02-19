@@ -119,7 +119,7 @@ print(head(extracted_files))
 ## Figure S2. Statistical differences among clusters (Kruskal-Wallis test)
 ![Figure S2. Statistical differences among clusters (Kruskal-Wallis test)](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FigS2_estadisticos_cluster_PCA4.png)
 ## Table S3. Statistics of main fuel properties by cluster
-![Table S3. Statistics of main fuel properties by cluster](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TableS3_statistics_clusters_PCA.PNG)
+![Table S3. Statistics of main fuel properties by cluster](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/TableS3_statistics_clusters_PCA.png)
 ## 22. JOINING PCA CLUSTERS AND FITTED MODELS TO CROWN POLYGONS (input for FIG. S4)
 ## Figure S4. Assignation of clusters to crowns polygons across thinned levels
 ![Figure S4. Assignation of clusters to crowns polygons across thinned levels](https://raw.githubusercontent.com/olgaviedma/Pulse-density-effects-on-LadderFuelsR-metrics/master/FIGURES_TABLES/FigS4_cluster_changes_all_flights_NTH_TH1P.png)
