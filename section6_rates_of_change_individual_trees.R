@@ -291,7 +291,7 @@ write.table(best_models, file.path(crowns_dir, "BEST_R2_FITTED_ALL_FUNCTIONS_ALL
 
 
 ################################################################
-#30.RATES OF CHANGE of EACH VARIABLE FOR EACH TREE (SLOPE from the BEST MODEL) (TABLE_S5 & FIG S6)
+#30.RATES OF CHANGE of EACH VARIABLE FOR EACH TREE (SLOPE from the BEST MODEL) (TABLE_S5 & FIG S5)
 ################################################################
 
 library(dplyr)
@@ -449,7 +449,7 @@ print(doc1, target = file.path(crowns_dir,"TABLE_S5_table_best_models_RATE_CHANG
 
 
 
-# FIG. S6: PLOTS OF COMPARISON BETWEEN RATES OF CHANGE (BAR PLOTS) FROM MODELS OF EACH ALL TREES AND FROM FITTED MODELS OVER MEDIANS DIRECTLY
+# FIG. S5: PLOTS OF COMPARISON BETWEEN RATES OF CHANGE (BAR PLOTS) FROM MODELS OF EACH ALL TREES AND FROM FITTED MODELS OVER MEDIANS DIRECTLY
 
 library(ggplot2)
 library(RColorBrewer)
@@ -594,7 +594,7 @@ p <- ggplot() +
 print(p)
 
 # Save the plot
-ggsave(filename = file.path(crowns_dir, paste0("FIG_S6_PLOT_COMPARISON_RATES_CHANGE_TREES_MEDIAN_VAR_p0595_THIN_LOWEST.png")), plot = p, width = 8, height = 6)
+ggsave(filename = file.path(crowns_dir, paste0("FIG_S5_PLOT_COMPARISON_RATES_CHANGE_TREES_MEDIAN_VAR_p2575_THIN_LOWEST.png")), plot = p, width = 8, height = 6)
 
 
 
