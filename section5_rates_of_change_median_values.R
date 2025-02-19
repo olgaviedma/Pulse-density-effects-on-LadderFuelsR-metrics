@@ -458,7 +458,7 @@ write.table(best_models_median1, file.path(crowns_dir, "BEST_R2_ALL_FITTED_FUNCT
 
 
 ###################################################
-#27.RATES OF CHANGE (slope of the best model) of EACH VARIABLE by THINNED LEVEL (median values)  (FIG. 7 and TABLE S4
+#27.RATES OF CHANGE (slope of the best model) of EACH VARIABLE by THINNED LEVEL (median values)  (FIG. 8 and TABLE S4)
 ##################################################
 
 library(dplyr)
@@ -570,7 +570,7 @@ doc <- doc %>%
 print(doc, target = file.path(crowns_dir,"TABLE_S4_table_best_models_RATE_CHANGE_using_MEDIAN_VALUES.docx"))
 
 
-## FIG 7:PLOT RATES OF CHANGE BASED ON FITTED MODELS OVER MEDIAN VALUES
+## FIG 8:PLOT RATES OF CHANGE BASED ON FITTED MODELS OVER MEDIAN VALUES
 
 library(ggplot2)
 library(gridExtra)
@@ -809,7 +809,7 @@ print(faceted_plot)
 
 # Save the Faceted Plot
 ggsave(
-  filename = file.path(output_dir, "FIG7_PLOT_RATES_CHANGE_BEST_FITTED_MODELS_MEDIAN_VARIABLES_p2575.png"),
+  filename = file.path(output_dir, "FIG8_PLOT_RATES_CHANGE_BEST_FITTED_MODELS_MEDIAN_VARIABLES_p2575.png"),
   plot = faceted_plot,
   width = 12,
   height = 8,
