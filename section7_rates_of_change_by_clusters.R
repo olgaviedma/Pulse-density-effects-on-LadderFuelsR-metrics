@@ -57,7 +57,7 @@ library(LadderFuelsR)
 
 
 ###############################################################
-#31.ASSIGN THE "NO_THINNED" CLUSTERS (CLUST_NT) TO THE OTHER THINNING LEVELS (FIG. S3)
+#31.ASSIGN THE "NO_THINNED" CLUSTERS (CLUST_NT) TO THE OTHER THINNING LEVELS (FIG. 6)
 ###############################################################
 
 library(dplyr)
@@ -193,7 +193,7 @@ levels(all_data_with_nt_cluster_sum$cluster) <- names_clusters
 # Define color mapping for the clusters
 cluster_colors <- c("cluster 1" = "orange", "cluster 2" = "brown", "cluster 3" = "darkgreen", "cluster 4" = "lightblue")
 
-plot_file4 <- file.path(cluster_dir,"FIG_S3_plot_distribution_clusters_by_CLUST_NT_by_thin_levels.png")
+plot_file4 <- file.path(cluster_dir,"FIG_6_plot_distribution_clusters_by_CLUST_NT_by_thin_levels.png")
 
 pp <- ggplot(all_data_with_nt_cluster_sum, aes(x = factor(thin_level), y = percentage, fill = factor(cluster))) +
   geom_bar(stat = "identity", position = "fill") +
@@ -377,7 +377,7 @@ write.table (filtered_data_clust_wide, file.path(cluster_dir, "MEDIAN_VARIABLES_
 
 
 ###############################################################
-#33. RATES OF CHANGE BY CLUSTERS from MEDIAN VALUES (USING THE BENCHMARK: CLUST_NT) (TABLE S6 and AND FIGS. S8-S12)
+#33. RATES OF CHANGE BY CLUSTERS from MEDIAN VALUES (USING THE BENCHMARK: CLUST_NT) (TABLE S6 and AND FIGS. S7-S11)
 ###############################################################
 
 library(dplyr)
@@ -821,7 +821,7 @@ best_models_clean2 <- best_models_clean1 %>%
 write.table(best_models_clean2, file.path(cluster_dir, "RATES_CHANGES_BEST_R2_MEDIAN_VALUES_CLUST_NT.txt"), sep = "\t", row.names = FALSE)
 
 
-# TABLE_S6: CONVERT BEST MODELS MEDIANS (BY thin_level + CLUSTER ) AND RATES OF CHANGE (SLOPE) INTO A .DOCX TABLE
+# TABLE_S6: CONVERT BEST MODELS MEDIANS (BY thin_level + CLUSTER) AND RATES OF CHANGE (SLOPE) INTO A .DOCX TABLE
 
 
 metrics_crowns_dir<- "CHMs/WATER_LAI/CLUSTER_ALL_DIFF_THINNED"
@@ -887,7 +887,7 @@ print(doc, target = file.path(cluster_dir,"TABLE_S6_table_best_models_RATE_CHANG
 
 
 
-# FIGS. S8-S12.PLOT FITTED MODELS AND RATES OF CHANGES OVER MEDIAN VALUES USING CLUSTER_NT
+# FIGS. S7-S11.PLOT FITTED MODELS AND RATES OF CHANGES OVER MEDIAN VALUES USING CLUSTER_NT
 
 output_dir<- "CHMs/WATER_LAI/CLUSTER_ALL_DIFF_THINNED"
 
@@ -1086,7 +1086,7 @@ for (group_name in names(variable_groups)) {
 
 
 ###############################################################
-#33.COMPARISON RATES OF CHANGE OF INDIVIDUAL TREES vs. MEDIAN VALUES (CLUST_NT) (TABLE S7 and FIG. S7)
+#34.COMPARISON RATES OF CHANGE OF INDIVIDUAL TREES vs. MEDIAN VALUES (CLUST_NT) (TABLE S7 and FIG. S6)
 ###############################################################
 
 crowns_dir <- "RESULTS/MODELS"
@@ -1706,7 +1706,7 @@ print(combined_plot)
 
 
 # Save the combined plot as one image
-ggsave(filename = file.path(cluster_dir, "FIG_S7_COMPARISON_RATES_CHANGE_CLUST_NT_p2575_ALL_TREES_vs_MEDIAN_VALUES.png"), 
+ggsave(filename = file.path(cluster_dir, "FIG_S6_COMPARISON_RATES_CHANGE_CLUST_NT_p2575_ALL_TREES_vs_MEDIAN_VALUES.png"), 
        plot = combined_plot, width = 12, height = 12, dpi=300)
 
 
