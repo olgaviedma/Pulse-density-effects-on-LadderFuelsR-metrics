@@ -54,8 +54,8 @@ library(lidRplugins)
 library(LadderFuelsR)
 
 #####################################################
-#INPUTS FOR FIG. 6: PLOTS EFFECTIVE METRICS by CLUSTERS
-#Plots of fuel layers with LAD percentage greater than 25 and the canopy base height (CBH) based on the maximum LAD percentage (get_plots_effective FUNCTION).
+#INPUTS FOR FIG. 7: PLOTS EFFECTIVE METRICS by CLUSTERS
+#Plots of fuel layers with LAD percentage greater than 10 percentage and the canopy base height (CBH) based on the maximum LAD percentage (get_plots_effective FUNCTION).
 # Users can change the plotting function using other ones from LadderFuelsR
 #####################################################
 
@@ -205,4 +205,3 @@ for (index in 1:nrow(cluster_data)) {
 }
 
 ```
-
